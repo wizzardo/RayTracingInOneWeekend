@@ -62,7 +62,8 @@ public class App {
                         // diffuse
                         var albedo = Vec3.random(); //color::random() * color::random() - what?
                         sphere_material = new LambertianMaterial(albedo);
-                        app.hittables.add(new Sphere(center, 0.2f, sphere_material));
+                        var center2 = new Vec3(0, Utils.random(0, 0.5), 0).add(center);
+                        app.hittables.add(new Sphere(center, center2, 0.2f, sphere_material));
                     } else if (choose_mat < 0.95) {
                         // metal
                         var albedo = Vec3.random(0.5f, 1);
@@ -98,9 +99,10 @@ public class App {
 //        cam.imageWidth /= 2;
 //        cam.imageHeight /= 2;
         cam.samplesPerPixel = 500;
+        cam.samplesPerPixel = 100;
 //        cam.samplesPerPixel = 50;
         cam.maxDepth = 50;
-        cam.samplesPerPixel = 10;
+//        cam.samplesPerPixel = 10;
 //        cam.samplesPerPixel = 1;
         cam.maxDepth = 20;
 //        cam.samplesPerPixel = 3;

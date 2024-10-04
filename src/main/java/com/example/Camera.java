@@ -125,6 +125,7 @@ public class Camera {
                         .add(yy * pixelDeltaV.getX(), yy * pixelDeltaV.getY(), yy * pixelDeltaV.getZ())
                         .sub(ray.origin)
                 ;
+                ray.time = Utils.random();
 
                 rayColor(ray, color, hittables, hitRecord, maxDepth);
 

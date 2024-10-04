@@ -12,11 +12,11 @@ public class HittableList implements Hittable {
         boolean hitAnything = false;
         double closestSoFar = rayT.max;
 
-        var rd2 = ray.direction.lengthSquared();
+//        var rd2 = ray.direction.lengthSquared();
 
         for (int i = this.size() - 1; i >= 0; i--) {
-            float t = sphereHitCheck(ray, doubles, i * 4, rayT, rd2);
-            if (t > 0 && array[i].hit(ray, tmp, rayT, t)) {
+//            float t = sphereHitCheck(ray, doubles, i * 4, rayT, rd2);
+            if (array[i].hit(ray, tmp, rayT)) {
                 hitAnything = true;
                 if (tmp.time < closestSoFar) {
                     closestSoFar = tmp.time;
